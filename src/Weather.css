@@ -18,3 +18,17 @@
   border-color: rgba(1, 97, 104, 0.281);
   color: rgba(1, 97, 104);
 }
+
+.temperature {
+  font-size: 82px;
+}
+
+.icon {
+  position: relative;
+  top: -25px;
+}
+
+.units {
+  position: relative;
+  top: -40px;
+}
