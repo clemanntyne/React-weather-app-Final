@@ -1,0 +1,11 @@
+.Weather {
+  border: thick double rgb(174, 238, 243);
+  border-radius: 10px;
+  box-shadow: 10px 5px 20px hsl(0, 0%, 50%, 0.3);
+}
+
+.Weather ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
