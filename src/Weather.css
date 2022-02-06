@@ -1,11 +1,20 @@
 .Weather {
-  border: thick double rgb(174, 238, 243);
+  border: thick double rgba(1, 97, 104, 0.281);
   border-radius: 10px;
-  box-shadow: 10px 5px 20px hsl(0, 0%, 50%, 0.3);
+  box-shadow: 5px 5px 15px rgba(177, 175, 175, 0.3);
+  color: rgb(60, 63, 63);
+  max-width: 991px;
+  min-width: 768px;
 }
 
 .Weather ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.Weather button {
+  background-color: rgba(1, 97, 104, 0.281);
+  border-color: rgba(1, 97, 104, 0.281);
+  color: rgba(1, 97, 104);
 }

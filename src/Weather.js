@@ -22,18 +22,18 @@ export default function Weather() {
         </div>
       </form>
       <div>
-        <ul>
-          <li>City Name</li>
+        <ul className="m-3">
+          <li className="fs-4 fw-bold">City Name</li>
           <li>Last Updated: (time)</li>
           <li>Weather Description</li>
         </ul>
         <div className="row">
-          <div className="col-6">
+          <div className="col-6 ms-3">
             <span>Weather Icon </span>
             <span>Temp</span>
             <span>C° | F°</span>
           </div>
-          <div className="col-6">
+          <div className="col-3">
             <ul>
               <li>Clouds: %</li>
               <li>Wind: mph</li>
@@ -41,7 +41,7 @@ export default function Weather() {
             </ul>
           </div>
         </div>
-        <div className="row">
+        <div className="row text-center mt-3 mb-3">
           <div className="col-2">
             <ul>
               <li>Mon</li>
