@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormatDate from "./FormatDate";
+import WeatherInfo from "./WeatherInfo";
 
 import "./Weather.css";
 
-export default function Weather(props) {
+export default function Weather() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
   const [ready, setReady] = useState(false);
 
   function getWeather(response) {
+    console.log(response);
     setReady(true);
     setWeather({
       city: response.data.name,
@@ -21,7 +22,6 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    console.log(response);
   }
 
   function handleSubmit(event) {
@@ -60,81 +60,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div> {form} </div>
-        <div>
-          <ul className="m-3">
-            <li className="fs-4 fw-bold">{weather.city}</li>
-            <li>
-              Last Updated: <FormatDate date={weather.date} />
-            </li>
-            <li className="text-capitalize">{weather.description}</li>
-          </ul>
-          <div className="row">
-            <div className="col-6 ms-3">
-              <span>
-                <img src={weather.icon} alt="weather icon" className="icon" />
-              </span>
-              <span className="temperature">{weather.temperature}</span>
-              <span className="units">C° | F°</span>
-            </div>
-            <div className="col-3">
-              <ul>
-                <li>Clouds: {weather.clouds}%</li>
-                <li>Wind: {weather.wind}mph</li>
-                <li>Humidity: {weather.humidity}%</li>
-              </ul>
-            </div>
-          </div>
-          <div className="row text-center mt-3 mb-3">
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-            <div className="col-2">
-              <ul>
-                <li>Mon</li>
-                <li>weather icon</li>
-                <li>high</li>
-                <li>low</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <WeatherInfo weather={weather} />
       </div>
     );
   } else {
